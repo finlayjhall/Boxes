@@ -9,7 +9,7 @@ void setup(){
 }
 
 void draw(){
-  delay(100);
+ 
   background(255);
   b2.x = mouseX;
   b2.y = mouseY;
