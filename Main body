@@ -1,0 +1,28 @@
+Box b1;
+Box b2;
+
+void setup(){
+  size(400,400);
+  background(255);
+  b1 = new Box(random(0,400),random(0,400), 20, 20, 80);
+  b2 = new Box(0,0, 30, 30, 127);
+}
+
+void draw(){
+  delay(100);
+  background(255);
+  b2.x = mouseX;
+  b2.y = mouseY;
+  b2.h = dist(b1.x, b1.y, b2.x, b2.y)/3;
+  b2.w = dist(b1.x, b1.y, b2.x, b2.y)/3;
+  
+ b1.x = random (100,300);
+  b1.y = random( 100, 300);
+  line(b1.x,b1.y, 0, 0);
+  line(b1.x,b1.y, width, 0);
+  line(b1.x,b1.y, width, height);
+  line(b1.x,b1.y, 0, height);
+  b1.display();
+  b2.display(); 
+  
+}
