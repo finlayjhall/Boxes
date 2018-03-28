@@ -1,0 +1,24 @@
+class Box {
+  
+  float x;
+  float y;
+  float h;
+  float w;
+  color c;
+  
+  Box(float tempx, float tempy, float temph, float tempw, color tempc) {
+    x = tempx;
+    y = tempy;
+    w = tempw;
+    h = temph;
+    c = tempc;
+    
+  }
+  
+  void display() {
+    rectMode(CENTER);
+    fill(c);
+    rect(x,y,w,h);
+    
+  }
+}
