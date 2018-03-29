@@ -1,24 +1,34 @@
 class Box {
-  
+
   float x;
   float y;
   float h;
   float w;
   color c;
-  
-  Box(float tempx, float tempy, float temph, float tempw, color tempc) {
-    x = tempx;
-    y = tempy;
-    w = tempw;
-    h = temph;
+  float xspeed;
+  float yspeed;
+
+  Box(float temps, color tempc) {
+    x = random(0, width);
+    y = random (0, height);
+    w =  temps;
+    h = temps;
     c = tempc;
-    
+    xspeed = random(0.2, 2);
+    yspeed = random(0.2, 2);
   }
-  
+
   void display() {
     rectMode(CENTER);
     fill(c);
-    rect(x,y,w,h);
-    
+    x= x + xspeed;
+    y= y + yspeed;
+    rect(x, y, w, h);
+    if (x> width || x < 0) {
+      xspeed = xspeed * -1;
+    }
+    if (y> height || y < 0) {
+      yspeed = yspeed * -1;
+    }
   }
 }
